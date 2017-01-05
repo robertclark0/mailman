@@ -31,25 +31,37 @@
     <div flex layout="row" style="padding-top: 30px;">
         <div flex="40" layout="column">
             <h2>sent:</h2>
-            <div ng-jsoneditor="onLoad" ng-model="funny" options="{}" style="width: 100%; height: 500px;"></div>
+            <div ng-jsoneditor="onLoad" ng-model="sentObject.value" options="options.sent" style="width: 100%; height: 500px;"></div>
+
+            <md-radio-group ng-model="options.sent.mode" layout="row" style="padding-top: 10px">
+                <md-radio-button value="code" class="md-primary">Code</md-radio-button>
+                <md-radio-button value="tree"> Tree </md-radio-button>
+            </md-radio-group>
+
         </div>
         <div flex="20" layout="column" style="padding-top: 100px;">
             <md-list>
                 <md-list-item>
                     <md-input-container flex>
                         <label>HTTP Protocol</label>
-                        <md-select ng-model="funny3">
+                        <md-select ng-model="protocol.type">
                             <md-option value="get">Get</md-option>
                             <md-option value="post">Post</md-option>
                         </md-select>
                     </md-input-container>
                 </md-list-item>
             </md-list>
-            <md-button class="md-raised md-accent">go</md-button>
+            <md-button ng-click="go()" class="md-raised md-accent">go</md-button>
         </div>
         <div flex="40" layout="column">
             <h2>received:</h2>
-            <div ng-jsoneditor="onLoad" ng-model="funny1" options="{}" style="width: 100%; height: 500px;"></div>
+            <div ng-jsoneditor="onLoad" ng-model="receivedObject.value" options="options.received" style="width: 100%; height: 500px;"></div>
+
+            <md-radio-group ng-model="options.received.mode" layout="row" style="padding-top: 10px">
+                <md-radio-button value="code" class="md-primary">Code</md-radio-button>
+                <md-radio-button value="tree"> Tree </md-radio-button>
+            </md-radio-group>
+
         </div>
     </div>
 
