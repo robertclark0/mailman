@@ -1,0 +1,1 @@
+This directory should contain angular components which are share across multiple major modules, each in its own folder. 

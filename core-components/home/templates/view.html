@@ -1,0 +1,56 @@
+<section layout="row">
+    <md-toolbar class="site-content-toolbar">
+        <div class="md-toolbar-tools">
+            <img src="assets/images/mailman.svg" style="width: 125px; height: auto; position: relative; top: 35px; left: -15px;" />
+            <span class="md-toolbar-item md-breadcrumb md-headline" style="font-weight: 700">mailman.</span>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+</section>
+<section layout="column" style="height: calc(100vh - 60px); padding: 25px;">
+
+    <div flex="25" style="padding-top: 50px;" layout="row">
+        <div flex="60">
+            <h2>api endpoint:</h2>
+
+            <md-input-container style="width: 90%">
+                <label>URL</label>
+                <input type="text" ng-model="api.text"/>
+            </md-input-container>
+        </div>
+        <div flex="40">
+            <h2>shortcuts:</h2>
+            <md-icon md-svg-icon="assets/icons/md-arrow-left.svg"></md-icon>
+            <md-button ng-click="shortcut('http://localhost:port')">Local</md-button>
+            <md-button ng-click="shortcut('https://pasbadevweb/')">Dev</md-button>
+            <md-button ng-click="shortcut('https://pasbastageweb.amedd.army.mil/')">Stage</md-button>
+            <md-button ng-click="shortcut('https://pasba.army.mil/')">Prod</md-button>
+        </div>
+
+    </div>
+    <div flex layout="row" style="padding-top: 30px;">
+        <div flex="40" layout="column">
+            <h2>sent:</h2>
+            <div ng-jsoneditor="onLoad" ng-model="funny" options="{}" style="width: 100%; height: 500px;"></div>
+        </div>
+        <div flex="20" layout="column" style="padding-top: 100px;">
+            <md-list>
+                <md-list-item>
+                    <md-input-container flex>
+                        <label>HTTP Protocol</label>
+                        <md-select ng-model="funny3">
+                            <md-option value="get">Get</md-option>
+                            <md-option value="post">Post</md-option>
+                        </md-select>
+                    </md-input-container>
+                </md-list-item>
+            </md-list>
+            <md-button class="md-raised md-accent">go</md-button>
+        </div>
+        <div flex="40" layout="column">
+            <h2>received:</h2>
+            <div ng-jsoneditor="onLoad" ng-model="funny1" options="{}" style="width: 100%; height: 500px;"></div>
+        </div>
+    </div>
+
+</section>

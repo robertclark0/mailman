@@ -1,0 +1,1 @@
+This directory should contain top level modules for your angular application, each module in its own folder. Under each module folder are organized the angular components such as Controllers, Directives and Providers.
