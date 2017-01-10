@@ -18,6 +18,10 @@ mailman.controller('Home', ['$scope', '$resource', 'logger', function ($scope, $
     $scope.go = function () {
 
         if ($scope.api.text) {
+
+            //resent received window
+            $scope.receivedObject.value = {};
+
             var resource = $resource($scope.api.text);
 
             switch ($scope.protocol.type) {

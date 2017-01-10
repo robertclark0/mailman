@@ -50,6 +50,10 @@ mailman.controller('Home', ['$scope', '$resource', 'logger', function ($scope, $
     $scope.go = function () {
 
         if ($scope.api.text) {
+
+            //resent received window
+            $scope.receivedObject.value = {};
+
             var resource = $resource($scope.api.text);
 
             switch ($scope.protocol.type) {
@@ -66,6 +70,7 @@ mailman.controller('Home', ['$scope', '$resource', 'logger', function ($scope, $
                             console.log(response);
 
                         }).$promise.then(function (response) {
+                            //promise
                             console.log(response);
                             $scope.options.received.mode = 'code';
                             $scope.receivedObject.value = response;
@@ -80,7 +85,17 @@ mailman.controller('Home', ['$scope', '$resource', 'logger', function ($scope, $
                 case 'post':
 
                     try{
-                        resource.save($scope.sentObject.value).$promise.then(function (response) {
+                        resource.save($scope.sentObject.value, function (response, header) {
+                            //good code
+                            console.log(response);
+                            console.log(header());
+
+                        }, function (response) {
+                            //bad code
+                            console.log(response);
+
+                        }).$promise.then(function (response) {
+                            //promise
                             console.log(response);
                             $scope.options.received.mode = 'code';
                             $scope.receivedObject.value = response;
