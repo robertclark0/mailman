@@ -31,7 +31,7 @@ mailman.controller('Home', ['$scope', '$resource', 'logger', function ($scope, $
                         resource.get($scope.sentObject.value, function (response, header) {
                             //good code
                             console.log(response);
-                            console.log(header());
+                            //console.log(header());
 
                         }, function (response) {
                             //bad code
@@ -56,7 +56,7 @@ mailman.controller('Home', ['$scope', '$resource', 'logger', function ($scope, $
                         resource.save($scope.sentObject.value, function (response, header) {
                             //good code
                             console.log(response);
-                            console.log(header());
+                            //console.log(header());
 
                         }, function (response) {
                             //bad code
